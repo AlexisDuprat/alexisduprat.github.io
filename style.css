@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+:root {
+  --color1: rgb(245, 245, 245);
+  --color2: rgb(31, 31, 31);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/*Tires et paragraphes*/
+
+h1 {
+  font-size: 3.4rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: -1px;
+}
+
+p {
+  line-height: 36px;
+  margin: 25px 0;
+}
+
+/* Boutons*/
+
+.niceBouton {
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid rgb(185, 185, 185);
+  padding: 15px 36px;
+  border-radius: 50px;
+  color: var(--color2);
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.niceBouton:hover {
+  text-transform: uppercase;
+  background: var(--color2);
+  color: var(--color1);
+  border: 1px solid var(--color2);
+  cursor: pointer;
+}
+
+.niceBouton:active {
+  transform: scale(1.1);
+}
+
+/*Container*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 55px;
+}
+
+/*lignes entres*/
+
+.section-1,
+.section-2,
+.contact {
+  box-shadow: inset 0 1px 0 rgb(209, 209, 209);
+}
+
+/********************************/
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  min-height: 100vh;
+  background-color: var(--color1);
+}
+
+/* HEADER */
+
+header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+}
+
+.container {
+  align-items: center;
+}
+
+.img-banner {
+  background: url("./assets/img/banner.jpg") right/cover;
+}
+
+/* SECTION 1 */
+
+.section-1 {
+  display: grid;
+  grid-template-columns: 37% 63%;
+  min-height: 400px;
+}
+
+.section-1 .img {
+  background: url("./assets/img/img-left.jpg") center/cover;
+}
+
+
+/* SECTION 2 */
+
+.section-2 {
+  display: grid;
+  grid-template-columns: 63% 37%;
+  min-height: 400px;
+}
+
+.section-2 .img {
+  background: url("./assets/img/img-right.jpg") center/cover;
+}
+
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 224px;
+  grid-template-areas: "i1 i2"
+    "te te";
+
+  gap: 10px;
+  width: 85%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#name,
+#email,
+textarea {
+  width: 100%;
+  margin: 20px 0 40px;
+  padding: 10px;
+  border: 1px solid rgb(195, 195, 195);
+  border-radius: 4px;
+  resize: none;
+  transition: 0.2s;
+}
+
+#name:focus,
+#email:focus,
+textarea:focus {
+  border: 2px solid var(--color2);
+}
+
+.name {
+  grid-area: i1;
+}
+
+.email {
+  grid-area: i2;
+}
+
+.textarea {
+  grid-area: te;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 70px 15px;
+  position: relative;
+}
+
+footer::before {
+  content: "";
+  height: 1px;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(184, 184, 184);
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  min-width: 300px;
+  margin: 0 auto;
+
+  list-style: none;
+}
+
+.rs-circle a {
+  text-decoration: none;
+  color: var(--color2);
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 50%;
+  padding: 10px;
+  height: 44px;
+  width: 44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.rs-circle a:hover {
+  background: rgb(31, 31, 31);
+  color: #fff;
+  cursor: pointer;
+}
+
+.rs-circle a:active {
+  transform: scale(1.1);
+}
+
+.rs-circle i {
+  font-size: 1.2rem;
+}
+
+
+/***************** RESPONSIVE **************/
+
+@media screen and (max-width: 700px) {
+
+  header,
+  .section-2 {
+    display: block;
+  }
+
+  header {
+    height: auto;
+  }
+
+  header .img-banner {
+    height: 50vh;
+    margin-top: 30px;
+  }
+
+  .section-1 .img,
+  .section-2 .img {
+    height: 30vh;
+  }
+
+  .section-1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .container {
+    padding: 60px 15px;
+  }
+
+  footer ul {
+    min-width: 200px;
+  }
+
+  .rs-circle a {
+    width: 30px;
+    height: 30px;
+  }
+
+  .rs-circle i {
+    font-size: 0.7rem;
+  }
+
+}
